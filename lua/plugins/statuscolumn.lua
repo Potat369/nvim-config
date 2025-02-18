@@ -15,7 +15,7 @@ return {
 				},
 				{
 					sign = {
-						name = { ".*" },
+						namespace = { "gitsign" },
 						colwidth = 1,
 					},
 				},
