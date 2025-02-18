@@ -1,0 +1,25 @@
+return {
+	"luukvbaal/statuscol.nvim",
+	opts = function()
+		local builtin = require("statuscol.builtin")
+		return {
+			segments = {
+				{
+					sign = {
+						name = { "Diagnostic" },
+						colwidth = 1,
+					},
+				},
+				{
+					text = { builtin.lnumfunc },
+				},
+				{
+					sign = {
+						name = { ".*" },
+						colwidth = 1,
+					},
+				},
+			},
+		}
+	end,
+}
