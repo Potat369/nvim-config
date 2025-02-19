@@ -3,6 +3,7 @@ return {
 	opts = function()
 		local builtin = require("statuscol.builtin")
 		return {
+			relculright = true,
 			segments = {
 				{
 					sign = {
