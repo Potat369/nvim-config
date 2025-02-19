@@ -1,5 +1,8 @@
 local o = vim.o
 
+vim.g.mapleader = " "
+vim.g.localmapleader = " "
+
 o.expandtab = true
 o.shiftwidth = 4
 o.tabstop = 4
