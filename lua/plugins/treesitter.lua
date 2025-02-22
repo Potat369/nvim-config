@@ -2,8 +2,7 @@ return {
 	"nvim-treesitter/nvim-treesitter",
 	opts = {
 		ensure_installed = { "lua" },
-		indent = {
-			enable = true,
-		},
+		indent = { enable = true },
+		highlight = { enable = true },
 	},
 }
