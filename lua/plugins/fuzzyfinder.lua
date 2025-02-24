@@ -9,4 +9,11 @@ return {
 		end)
 		vim.keymap.set("n", "<leader>ff", builtin.find_files)
 	end,
+	opts = {
+		defaults = {
+			file_ignore_patterns = {
+				"**.git/*",
+			},
+		},
+	},
 }
