@@ -3,6 +3,7 @@ return {
 	dependencies = { "saghen/blink.cmp" },
 	opts = {
 		servers = {
+			rust_analyzer = {},
 			lua_ls = {
 				server_capabilities = {
 					semanticTokensProvider = vim.NIL,
