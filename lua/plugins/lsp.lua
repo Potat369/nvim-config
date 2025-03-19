@@ -5,8 +5,14 @@ return {
 		servers = {
 			rust_analyzer = {},
 			lua_ls = {
-				server_capabilities = {
-					semanticTokensProvider = vim.NIL,
+				settings = {
+					Lua = {
+						workspace = {
+							library = {
+								vim.env.VIMRUNTIME,
+							},
+						},
+					},
 				},
 			},
 			pylsp = {},
