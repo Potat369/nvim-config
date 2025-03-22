@@ -1,8 +1,14 @@
 return {
 	"nvim-treesitter/nvim-treesitter",
-	opts = {
-		ensure_installed = { "lua" },
-		indent = { enable = true },
-		highlight = { enable = true },
-	},
+	build = ":TSUpdate",
+	config = function()
+		local configs = require("nvim-treesitter.configs")
+
+		configs.setup({
+			ensure_installed = { "lua" },
+			auto_install = true,
+			highlight = { enable = true },
+			indent = { enable = true },
+		})
+	end,
 }
