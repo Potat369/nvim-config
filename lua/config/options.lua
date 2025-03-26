@@ -2,6 +2,7 @@ local o = vim.o
 
 vim.g.mapleader = " "
 vim.g.localmapleader = " "
+vim.keymap.set("n", "<leader>o", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 
 o.expandtab = true
 o.shiftwidth = 4
