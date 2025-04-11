@@ -3,6 +3,7 @@ return {
 	dependencies = { "saghen/blink.cmp" },
 	opts = {
 		servers = {
+            nixd = {},
 			rust_analyzer = {},
 			lua_ls = {
 				settings = {
