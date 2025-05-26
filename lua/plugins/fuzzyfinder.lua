@@ -17,6 +17,7 @@ return {
 			file_ignore_patterns = {
 				"**.git/*",
 				"**.gradle/*",
+				"**target/*",
 			},
 		},
 	},
