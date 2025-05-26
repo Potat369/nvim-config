@@ -3,7 +3,6 @@ return {
 	dependencies = { "saghen/blink.cmp" },
 	opts = {
 		servers = {
-            nixd = {},
 			rust_analyzer = {},
 			nixd = {},
 			phpactor = {},
