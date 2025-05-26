@@ -1,6 +1,7 @@
 return {
 	"saghen/blink.cmp",
 	version = "*",
+	event = "InsertEnter",
 	opts = {
 		signature = { enabled = true },
 		sources = {
