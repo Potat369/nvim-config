@@ -1,6 +1,5 @@
 return {
 	"saghen/blink.cmp",
-	version = "*",
 	event = "InsertEnter",
 	opts = {
 		signature = { enabled = true },
@@ -15,7 +14,7 @@ return {
 		},
 		fuzzy = {
 			prebuilt_binaries = {
-				force_version = "v0.13.0",
+				force_version = "v1.3.1",
 			},
 		},
 	},
