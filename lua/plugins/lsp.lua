@@ -5,6 +5,8 @@ return {
 		servers = {
             nixd = {},
 			rust_analyzer = {},
+			nixd = {},
+			phpactor = {},
 			lua_ls = {
 				settings = {
 					Lua = {
