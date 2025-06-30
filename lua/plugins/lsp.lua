@@ -6,6 +6,7 @@ return {
 			rust_analyzer = {},
 			nixd = {},
 			phpactor = {},
+			astro = {},
 			lua_ls = {
 				settings = {
 					Lua = {
