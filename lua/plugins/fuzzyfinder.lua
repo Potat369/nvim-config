@@ -7,9 +7,10 @@ return {
 			builtin.find_files({ cwd = vim.fn.stdpath("config") })
 		end)
 		vim.keymap.set("n", "<leader>fn", function()
-			builtin.find_files({ cwd = "/etc/nixos/" })
+			builtin.find_files({ cwd = "~/nixos-config/" })
 		end)
 		vim.keymap.set("n", "<leader>ff", builtin.find_files)
+		vim.keymap.set("n", "<leader>fg", builtin.live_grep)
 	end,
 	opts = {
 		defaults = {

@@ -7,6 +7,9 @@ return {
 			nixd = {},
 			phpactor = {},
 			astro = {},
+			csharp_ls = {},
+			ts_ls = {},
+			cssls = {},
 			lua_ls = {
 				settings = {
 					Lua = {
