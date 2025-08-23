@@ -9,6 +9,7 @@ return {
 			astro = {},
 			csharp_ls = {},
 			ts_ls = {},
+			emmet_language_server = {},
 			cssls = {},
 			lua_ls = {
 				settings = {
