@@ -1,9 +1,12 @@
 return {
 	"saghen/blink.cmp",
 	event = "InsertEnter",
+	dependencies = { "L3MON4D3/LuaSnip" },
 	opts = {
 		signature = { enabled = true },
+		snippets = { preset = "luasnip" },
 		sources = {
+			default = { "lsp", "path", "snippets", "buffer" },
 			providers = {
 				cmdline = {
 					enabled = function()

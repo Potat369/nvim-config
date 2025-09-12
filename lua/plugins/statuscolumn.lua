@@ -4,10 +4,12 @@ return {
 		local builtin = require("statuscol.builtin")
 		return {
 			relculright = true,
+			bt_ignore = { "nofile" },
+			ft_ignore = { "help", "leetcode.nvim" },
 			segments = {
 				{
 					sign = {
-						name = { "Diagnostic" },
+						namespace = { "gitsign" },
 						colwidth = 1,
 					},
 				},
@@ -16,7 +18,7 @@ return {
 				},
 				{
 					sign = {
-						namespace = { "gitsign" },
+						name = { "Diagnostic" },
 						colwidth = 1,
 					},
 				},
