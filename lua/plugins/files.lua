@@ -1,5 +1,9 @@
 return {
 	"stevearc/oil.nvim",
-	opts = {},
-	cmd = "Oil",
+	opts = {
+		default_file_explorer = true,
+		view_options = {
+			show_hidden = false,
+		},
+	},
 }

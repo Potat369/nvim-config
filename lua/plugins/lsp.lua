@@ -11,7 +11,8 @@ return {
 					cmd = { "clangd", "-fallback-style=clang" },
 				},
 				rust_analyzer = {},
-				nixd = {},
+				tailwindcss = {},
+				nil_ls = {},
 				phpactor = {},
 				astro = {},
 				csharp_ls = {},
@@ -30,6 +31,7 @@ return {
 					},
 				},
 				pylsp = {},
+				eslint = {},
 			},
 		},
 		config = function(_, opts)
