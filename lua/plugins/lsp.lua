@@ -1,21 +1,14 @@
 return {
 	{
-		"mfussenegger/nvim-jdtls",
-	},
-	{
 		"neovim/nvim-lspconfig",
 		dependencies = { "saghen/blink.cmp" },
 		opts = {
 			servers = {
-				clangd = {
-					cmd = { "clangd", "-fallback-style=clang" },
-				},
 				rust_analyzer = {},
 				tailwindcss = {},
 				nil_ls = {},
 				phpactor = {},
 				astro = {},
-				csharp_ls = {},
 				ts_ls = {},
 				emmet_language_server = {},
 				cssls = {},
