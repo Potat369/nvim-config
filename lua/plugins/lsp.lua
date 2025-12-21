@@ -12,13 +12,14 @@ return {
 				ts_ls = {},
 				emmet_language_server = {},
 				cssls = {},
+				c3_lsp = {
+					cmd = { "c3-lsp" },
+				},
 				lua_ls = {
 					settings = {
 						Lua = {
 							workspace = {
-								library = {
-									vim.env.VIMRUNTIME,
-								},
+								library = vim.api.nvim_list_runtime_paths(),
 							},
 						},
 					},

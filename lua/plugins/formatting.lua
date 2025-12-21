@@ -3,6 +3,7 @@ return {
 	event = "BufWritePre",
 	opts = {
 		formatters_by_ft = {
+			typst = { "typstyle" },
 			lua = { "stylua" },
 			python = { "isort", "black" },
 			nix = { "nixfmt" },
@@ -15,5 +16,6 @@ return {
 		format_on_save = {
 			lsp_format = "fallback",
 		},
+		notify_no_formatters = false,
 	},
 }

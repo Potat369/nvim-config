@@ -44,6 +44,7 @@ vim.keymap.set("n", "<leader>gs", ":Gitsigns stage_hunk<CR>", { desc = "Stage hu
 vim.keymap.set("n", "<leader>gp", ":Gitsigns preview_hunk<CR>", { desc = "Preview hunk" })
 vim.keymap.set("n", "<leader>gn", ":Gitsigns next_hunk<CR>", { desc = "Next hunk" })
 vim.keymap.set("n", "<leader>gi", ":Gitsigns preview_hunk_inline<CR>", { desc = "Preview hunk inline" })
+vim.keymap.set("n", "<leader>gr", ":Gitsigns reset_hunk<CR>", { desc = "Reset hunk" })
 vim.keymap.set("n", "<leader>gc", function()
 	local message = vim.fn.input("Enter commit message: ")
 	vim.fn.execute('!git commit -m "' .. message .. '"')

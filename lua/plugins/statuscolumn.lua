@@ -4,23 +4,18 @@ return {
 		local builtin = require("statuscol.builtin")
 		return {
 			relculright = true,
-			bt_ignore = { "nofile" },
-			ft_ignore = { "help", "leetcode.nvim" },
+			bt_ignore = { "help", "nofile" },
 			segments = {
 				{
 					sign = {
 						namespace = { "gitsign" },
 						colwidth = 1,
+						maxwidth = 1,
 					},
 				},
 				{
-					text = { builtin.lnumfunc },
-				},
-				{
-					sign = {
-						name = { "Diagnostic" },
-						colwidth = 1,
-					},
+					text = { builtin.lnumfunc, " " },
+					click = "v:lua.ScLa",
 				},
 			},
 		}

@@ -1,27 +1,24 @@
 return {
 	"nvim-treesitter/nvim-treesitter",
+	lazy = false,
+	branch = "main",
 	build = ":TSUpdate",
 	config = function()
-		local configs = require("nvim-treesitter.configs")
-
-		configs.setup({
-			ensure_installed = { "lua" },
-			auto_install = true,
-			highlight = { enable = true },
-			indent = { enable = true },
-			parser_install_info = {
-				ensure_installed = { "c3" },
-				c3 = {
-					install_info = {
-						url = "https://github.com/c3lang/tree-sitter-c3",
-						files = { "src/parser.c", "src/scanner.c" },
-						branch = "main",
-					},
-					sync_install = false, -- Set to true if you want to install synchronously
-					auto_install = true, -- Automatically install when opening a file
-					filetype = "c3", -- if filetype does not match the parser name
-				},
-			},
+		local treesitter = require("nvim-treesitter")
+		local treesitter_config = require("nvim-treesitter.config")
+		treesitter.setup({ install_dir = vim.fs.joinpath(vim.fn.stdpath("data"), "/treesitter") })
+		vim.api.nvim_create_autocmd("FileType", {
+			group = vim.api.nvim_create_augroup("vim-treesitter-start", {}),
+			callback = function(ctx)
+				local langs = treesitter_config.norm_languages(vim.bo[ctx.buf].filetype, { installed = true })
+				if langs ~= nil then
+					treesitter.install(langs):await(function()
+						pcall(vim.treesitter.start)
+					end)
+				else
+					pcall(vim.treesitter.start)
+				end
+			end,
 		})
 	end,
 }
