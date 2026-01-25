@@ -24,7 +24,7 @@ return {
 						},
 					},
 				},
-				pylsp = {},
+				pyrefly = {},
 				eslint = {},
 			},
 		},
