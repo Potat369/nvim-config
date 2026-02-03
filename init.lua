@@ -16,7 +16,6 @@ vim.o.numberwidth = 2
 
 vim.o.inccommand = "split"
 vim.o.splitright = true
-vim.o.splitbelow = true
 vim.o.scrolloff = 8
 vim.o.confirm = true
 
@@ -40,14 +39,14 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 	end,
 })
 
-vim.keymap.set("n", "<leader>gs", ":Gitsigns stage_hunk<CR>", { desc = "Stage hunk" })
-vim.keymap.set("n", "<leader>gp", ":Gitsigns preview_hunk<CR>", { desc = "Preview hunk" })
-vim.keymap.set("n", "<leader>gn", ":Gitsigns next_hunk<CR>", { desc = "Next hunk" })
-vim.keymap.set("n", "<leader>gi", ":Gitsigns preview_hunk_inline<CR>", { desc = "Preview hunk inline" })
-vim.keymap.set("n", "<leader>gr", ":Gitsigns reset_hunk<CR>", { desc = "Reset hunk" })
+vim.keymap.set("n", "<leader>gs", ":Gitsigns stage_hunk<CR>", { desc = "Git stage hunk" })
+vim.keymap.set("n", "<leader>gp", ":Gitsigns preview_hunk<CR>", { desc = "Git preview hunk" })
+vim.keymap.set("n", "<leader>gn", ":Gitsigns next_hunk<CR>", { desc = "Git next hunk" })
+vim.keymap.set("n", "<leader>gi", ":Gitsigns preview_hunk_inline<CR>", { desc = "Git preview hunk inline" })
+vim.keymap.set("n", "<leader>gr", ":Gitsigns reset_hunk<CR>", { desc = "Git reset hunk" })
 vim.keymap.set("n", "<leader>gc", function()
 	local message = vim.fn.input("Enter commit message: ")
 	vim.fn.execute('!git commit -m "' .. message .. '"')
-end, { desc = "Commit" })
+end, { desc = "Git commit" })
 
 require("config.lazy")

@@ -10,6 +10,8 @@ return {
 				LineNr = { fg = theme.syn.string },
 				LineNrAbove = { fg = theme.ui.nontext, bg = theme.ui.bg_gutter },
 				LineNrBelow = { fg = theme.ui.nontext, bg = theme.ui.bg_gutter },
+				WinSeparator = { fg = "#282727" },
+				BlinkCmpCursorLineMenuHack = { bg = "#2d4f67" },
 			}
 		end,
 	},

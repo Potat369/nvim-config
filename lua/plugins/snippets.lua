@@ -1,8 +1,14 @@
 return {
-	"L3MON4D3/LuaSnip",
-	dependencies = { "rafamadriz/friendly-snippets" },
-	opts = {},
-	init = function()
-		require("luasnip.loaders.from_vscode").lazy_load()
-	end,
+	{
+		"rafamadriz/friendly-snippets",
+		lazy = true,
+	},
+	{
+		"L3MON4D3/LuaSnip",
+		lazy = true,
+		dependencies = { "rafamadriz/friendly-snippets" },
+		config = function()
+			require("luasnip.loaders.from_vscode").lazy_load()
+		end,
+	},
 }

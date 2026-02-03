@@ -11,4 +11,9 @@ return {
 			desc = "Buffer Local Keymaps (which-key)",
 		},
 	},
+	config = function()
+		local icons = require("which-key.icons")
+
+		table.insert(icons.rules, { pattern = "git", icon = "󰊢 ", color = "red" })
+	end,
 }
