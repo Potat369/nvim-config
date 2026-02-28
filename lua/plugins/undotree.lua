@@ -1,4 +1,4 @@
 return {
 	"mbbill/undotree",
-	cmd = { "UndoTreeShow" },
+	cmd = { "UndotreeShow" },
 }

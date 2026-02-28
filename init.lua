@@ -1,5 +1,6 @@
 vim.g.mapleader = " "
 vim.g.localmapleader = " "
+require("config.lazy")
 vim.keymap.set("n", "<leader>o", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 vim.diagnostic.config({ virtual_text = true })
 
@@ -23,6 +24,10 @@ vim.o.breakindent = true
 vim.o.undofile = true
 vim.o.ignorecase = true
 vim.o.smartcase = true
+
+vim.keymap.set("n", "K", function()
+	vim.lsp.buf.hover({ border = "rounded" })
+end, { desc = "Lsp hover" })
 
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
@@ -49,4 +54,15 @@ vim.keymap.set("n", "<leader>gc", function()
 	vim.fn.execute('!git commit -m "' .. message .. '"')
 end, { desc = "Git commit" })
 
-require("config.lazy")
+vim.api.nvim_create_autocmd("FileType", {
+	callback = function(ctx)
+		if vim.bo[ctx.buf].buftype == "help" then
+			local win = vim.api.nvim_get_current_win()
+			vim.api.nvim_win_set_config(win, {
+				vertical = true,
+				width = 78,
+				fixed = false,
+			})
+		end
+	end,
+})

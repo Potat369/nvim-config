@@ -3,8 +3,7 @@ return {
 	opts = function()
 		local builtin = require("statuscol.builtin")
 		return {
-			relculright = true,
-			bt_ignore = { "help", "nofile" },
+			bt_ignore = { "help", "nofile", "terminal" },
 			segments = {
 				{
 					sign = {

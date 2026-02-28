@@ -2,7 +2,6 @@ return {
 	"nvim-treesitter/nvim-treesitter",
 	lazy = false,
 	branch = "main",
-	build = ":TSUpdate",
 	opts = { install_dir = vim.fs.joinpath(vim.fn.stdpath("data"), "/treesitter") },
 	config = function()
 		local treesitter = require("nvim-treesitter")
@@ -12,11 +11,11 @@ return {
 			group = vim.api.nvim_create_augroup("vim-treesitter-start", {}),
 			callback = function(ctx)
 				local installed = treesitter.get_installed()
-				local ft = vim.bo[ctx.buf].filetype
+				local ft = vim.treesitter.language.get_lang(vim.bo[ctx.buf].filetype)
 				for _, v in ipairs(installed) do
 					if v == ft then
-						pcall(vim.treesitter.start, ctx.buf, ft)
-						break
+						vim.treesitter.start(ctx.buf, ft)
+						return
 					end
 				end
 
@@ -26,7 +25,7 @@ return {
 						treesitter.install(ft):await(function()
 							pcall(vim.treesitter.start, ctx.buf, ft)
 						end)
-						break
+						return
 					end
 				end
 			end,

@@ -10,6 +10,17 @@ return {
 				phpactor = {},
 				astro = {},
 				ts_ls = {},
+				roslyn_ls = {
+					capabilities = {
+						textDocument = {
+							completion = {
+								completionItem = {
+									documentationFormat = { "plaintext" },
+								},
+							},
+						},
+					},
+				},
 				emmet_language_server = {},
 				cssls = {},
 				c3_lsp = {
