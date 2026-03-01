@@ -1,8 +1,11 @@
 return {
 	"luukvbaal/statuscol.nvim",
+	priority = 1000,
 	opts = function()
 		local builtin = require("statuscol.builtin")
+
 		return {
+			relculright = true,
 			bt_ignore = { "help", "nofile", "terminal" },
 			segments = {
 				{

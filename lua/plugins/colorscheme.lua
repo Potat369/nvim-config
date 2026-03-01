@@ -8,11 +8,17 @@ return {
 			local theme = colors.theme
 			local palette = colors.palette
 			return {
-				LineNr = { fg = palette.dragonWhite },
-				LineNrAbove = { fg = palette.dragonGray, bg = theme.ui.bg_gutter },
-				LineNrBelow = { fg = palette.dragonGray, bg = theme.ui.bg_gutter },
-				WinSeparator = { fg = palette.dragonBlack4 },
-				BlinkCmpCursorLineMenuHack = { bg = palette.waveBlue2 },
+				LineNr = { fg = theme.syn.string, bg = "" },
+				LineNrAbove = { fg = theme.ui.nontext, bg = "" },
+				LineNrBelow = { fg = theme.ui.nontext, bg = "" },
+				GitSignsAdd = { fg = theme.vcs.added, bg = "" },
+				GitSignsChange = { fg = theme.vcs.changed, bg = "" },
+				GitSignsDelete = { fg = theme.vcs.removed, bg = "" },
+				SignColumn = { bg = "" },
+				WinSeparator = { fg = theme.ui.bg_p1 },
+				BlinkCmpCursorLineMenuHack = { bg = theme.ui.bg_search },
+				NormalFloat = { bg = theme.ui.bg },
+				FloatBorder = { bg = theme.ui.bg },
 			}
 		end,
 	},

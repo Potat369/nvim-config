@@ -26,7 +26,7 @@ vim.o.ignorecase = true
 vim.o.smartcase = true
 
 vim.keymap.set("n", "K", function()
-	vim.lsp.buf.hover({ border = "rounded" })
+	vim.lsp.buf.hover({ anchor_bias = "below", max_width = 78, border = "rounded" })
 end, { desc = "Lsp hover" })
 
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")

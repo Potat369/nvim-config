@@ -10,17 +10,7 @@ return {
 				phpactor = {},
 				astro = {},
 				ts_ls = {},
-				roslyn_ls = {
-					capabilities = {
-						textDocument = {
-							completion = {
-								completionItem = {
-									documentationFormat = { "plaintext" },
-								},
-							},
-						},
-					},
-				},
+				roslyn_ls = {},
 				emmet_language_server = {},
 				cssls = {},
 				c3_lsp = {
@@ -41,7 +31,19 @@ return {
 		},
 		config = function(_, opts)
 			for server, config in pairs(opts.servers) do
-				config.capabilities = require("blink.cmp").get_lsp_capabilities(config.capabilities)
+				config.capabilities =
+					require("blink.cmp").get_lsp_capabilities(vim.tbl_deep_extend("force", config.capabilities or {}, {
+						textDocument = {
+							completion = {
+								completionItem = {
+									documentationFormat = { "plaintext" },
+								},
+							},
+							hover = {
+								contentFormat = { "plaintext" },
+							},
+						},
+					}))
 				vim.lsp.config(server, config)
 				vim.lsp.enable(server)
 			end

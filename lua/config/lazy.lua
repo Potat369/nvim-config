@@ -20,5 +20,8 @@ require("lazy").setup({
 	},
 	rocks = { enabled = false },
 	hererocks = { enabled = false },
-	install = { colorscheme = { "kanagawa-dragon" } },
+	install = {
+		missing = false,
+		colorscheme = { "kanagawa-dragon" },
+	},
 })

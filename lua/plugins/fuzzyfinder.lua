@@ -27,6 +27,7 @@ return {
 			end, { desc = "Find files in nixos config" })
 			vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Find files in current directory " })
 			vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "Find text in current directory" })
+			vim.keymap.set("n", "<leader>fh", builtin.highlights, { desc = "Find highlights" })
 		end,
 		opts = {
 			defaults = {
