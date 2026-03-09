@@ -9,6 +9,7 @@ vim.o.shiftwidth = 4
 vim.o.tabstop = 4
 vim.o.softtabstop = 4
 vim.o.smartindent = true
+vim.o.autoindent = true
 vim.o.wrap = false
 
 vim.o.number = true
@@ -20,14 +21,15 @@ vim.o.splitright = true
 vim.o.scrolloff = 8
 vim.o.confirm = true
 
+vim.o.lazyredraw = true
+
 vim.o.breakindent = true
 vim.o.undofile = true
 vim.o.ignorecase = true
 vim.o.smartcase = true
 
-vim.keymap.set("n", "K", function()
-	vim.lsp.buf.hover({ anchor_bias = "below", max_width = 78, border = "rounded" })
-end, { desc = "Lsp hover" })
+vim.o.redrawtime = 10000
+vim.o.maxmempattern = 20000
 
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
@@ -38,9 +40,14 @@ vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper win
 
 vim.api.nvim_create_autocmd("TextYankPost", {
 	desc = "Highlight when yanking (copying) text",
-	group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
 	callback = function()
 		vim.hl.on_yank({ timeout = 50, higroup = "BlinkCmpCursorLineMenuHack" })
+	end,
+})
+
+vim.api.nvim_create_autocmd("VimResized", {
+	callback = function()
+		vim.cmd("tabdo wincmd =")
 	end,
 })
 
@@ -54,7 +61,7 @@ vim.keymap.set("n", "<leader>gc", function()
 	vim.fn.execute('!git commit -m "' .. message .. '"')
 end, { desc = "Git commit" })
 
-vim.api.nvim_create_autocmd("FileType", {
+vim.api.nvim_create_autocmd("BufEnter", {
 	callback = function(ctx)
 		if vim.bo[ctx.buf].buftype == "help" then
 			local win = vim.api.nvim_get_current_win()
@@ -66,3 +73,5 @@ vim.api.nvim_create_autocmd("FileType", {
 		end
 	end,
 })
+
+vim.keymap.set("n", "<leader>bo", ":%bd|e#<CR>", { desc = "Close all buffers except current" })

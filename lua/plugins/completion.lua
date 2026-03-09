@@ -17,7 +17,7 @@ return {
 		},
 		fuzzy = {
 			prebuilt_binaries = {
-				force_version = "v1.6.0",
+				force_version = "v1.9.1",
 			},
 		},
 	},
