@@ -7,6 +7,7 @@ return {
 		return {
 			relculright = true,
 			bt_ignore = { "help", "nofile", "terminal" },
+			ft_ignore = { "checkhealth" },
 			segments = {
 				{
 					sign = {
