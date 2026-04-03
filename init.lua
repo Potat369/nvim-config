@@ -1,8 +1,14 @@
 vim.g.mapleader = " "
 vim.g.localmapleader = " "
+
 require("config.lazy")
+
 vim.keymap.set("n", "<leader>o", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 vim.diagnostic.config({ virtual_text = true })
+
+vim.g.loaded_python3_provider = 0
+vim.g.loaded_ruby_provider = 0
+vim.g.loaded_perl_provider = 0
 
 vim.o.expandtab = true
 vim.o.shiftwidth = 4
