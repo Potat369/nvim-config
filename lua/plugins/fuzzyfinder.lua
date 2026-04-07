@@ -15,20 +15,60 @@ return {
 	},
 	{
 		"nvim-telescope/telescope.nvim",
-		lazy = true,
-		event = "VeryLazy",
-		config = function()
-			local builtin = require("telescope.builtin")
-			vim.keymap.set("n", "<leader>fc", function()
-				builtin.find_files({ cwd = vim.fn.stdpath("config") })
-			end, { desc = "Find files in neovim config" })
-			vim.keymap.set("n", "<leader>fn", function()
-				builtin.find_files({ cwd = "~/nixos-config/" })
-			end, { desc = "Find files in nixos config" })
-			vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Find files in current directory " })
-			vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "Find text in current directory" })
-			vim.keymap.set("n", "<leader>fh", builtin.highlights, { desc = "Find highlights" })
-		end,
+		cmd = "Telescope",
+		keys = {
+			{
+				"<leader>fc",
+				function()
+					require("telescope.builtin").find_files({ cwd = vim.fn.stdpath("config") })
+				end,
+				desc = "Find files in neovim config",
+			},
+			{
+				"<leader>fn",
+				function()
+					require("telescope.builtin").find_files({ cwd = "~/nixos-config/" })
+				end,
+				desc = "Find files in nixos config",
+			},
+			{
+				"<leader>ff",
+				function()
+					require("telescope.builtin").find_files()
+				end,
+				desc = "Find files in cwd",
+			},
+
+			{
+				"<leader>fgc",
+				function()
+					require("telescope.builtin").live_grep({ cwd = vim.fn.stdpath("config") })
+				end,
+				desc = "Grep files in neovim config",
+			},
+			{
+				"<leader>fgn",
+				function()
+					require("telescope.builtin").live_grep({ cwd = "~/nixos-config/" })
+				end,
+				desc = "Grep files in nixos config",
+			},
+			{
+				"<leader>fgf",
+				function()
+					require("telescope.builtin").live_grep()
+				end,
+				desc = "Grep files in cwd",
+			},
+
+			{
+				"<leader>fh",
+				function()
+					require("telescope.builtin").highlights()
+				end,
+				desc = "Find highlight groups",
+			},
+		},
 		opts = {
 			defaults = {
 				file_ignore_patterns = {

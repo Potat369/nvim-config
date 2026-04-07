@@ -1,8 +1,9 @@
 return {
 	"nvim-treesitter/nvim-treesitter",
-	lazy = false,
 	branch = "main",
-	opts = { install_dir = vim.fs.joinpath(vim.fn.stdpath("data"), "/treesitter") },
+	opts = {
+		install_dir = vim.fs.joinpath(vim.fn.stdpath("data"), "/treesitter"),
+	},
 	config = function()
 		local treesitter = require("nvim-treesitter")
 
