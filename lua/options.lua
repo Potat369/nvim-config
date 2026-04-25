@@ -13,10 +13,6 @@ vim.o.smartindent = true
 vim.o.autoindent = true
 vim.o.wrap = false
 
-vim.o.number = true
-vim.o.relativenumber = true
-vim.o.numberwidth = 2
-
 vim.o.inccommand = "split"
 vim.o.splitright = true
 vim.o.scrolloff = 8
@@ -31,3 +27,6 @@ vim.o.smartcase = true
 
 vim.o.redrawtime = 10000
 vim.o.maxmempattern = 20000
+
+-- vim.o.list = true
+-- vim.o.listchars = "tab:▏ "

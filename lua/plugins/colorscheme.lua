@@ -17,6 +17,7 @@ return {
 				SignColumn = { bg = "" },
 				WinSeparator = { fg = theme.ui.bg_p1 },
 				BlinkCmpCursorLineMenuHack = { bg = theme.ui.bg_search },
+				Whitespace = { fg = theme.ui.bg_p1 },
 			}
 		end,
 	},

@@ -1,8 +1,12 @@
 return {
 	"luukvbaal/statuscol.nvim",
-	priority = 1000,
+	priority = 999,
 	opts = function()
 		local builtin = require("statuscol.builtin")
+
+		vim.o.number = true
+		vim.o.relativenumber = true
+		vim.o.numberwidth = 2
 
 		return {
 			relculright = true,

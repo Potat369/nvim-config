@@ -1,5 +1,6 @@
 return {
 	"saghen/blink.cmp",
+	version = "1.*",
 	event = { "InsertEnter", "CmdLineEnter" },
 	opts = {
 		signature = { enabled = true },

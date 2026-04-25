@@ -8,24 +8,24 @@ return {
 	opts = function()
 		--------------------| lazy patch |--------------------
 
-		---@param changes {file:string, what:string}[]
-		---@diagnostic disable-next-line: duplicate-set-field
-		require("lazy.manage.reloader").reload = function(changes)
-			vim.schedule(function()
-				if Config.options.change_detection.notify and not Config.headless() then
-					for _, change in ipairs(changes) do
-						vim.notify(
-							change.what .. " " .. vim.fn.fnamemodify(change.file, ":t"),
-							nil,
-							{ group = "lazy.nvim", annote = "lazy.nvim" }
-						)
-					end
-				end
-				Plugin.load()
-				vim.api.nvim_exec_autocmds("User", { pattern = "LazyRender", modeline = false })
-				vim.api.nvim_exec_autocmds("User", { pattern = "LazyReload", modeline = false })
-			end)
-		end
+		-- ---@param changes {file:string, what:string}[]
+		-- ---@diagnostic disable-next-line: duplicate-set-field
+		-- require("lazy.manage.reloader").reload = function(changes)
+		-- 	vim.schedule(function()
+		-- 		if Config.options.change_detection.notify and not Config.headless() then
+		-- 			for _, change in ipairs(changes) do
+		-- 				vim.notify(
+		-- 					change.what .. " " .. vim.fn.fnamemodify(change.file, ":t"),
+		-- 					nil,
+		-- 					{ group = "lazy.nvim", annote = "lazy.nvim" }
+		-- 				)
+		-- 			end
+		-- 		end
+		-- 		Plugin.load()
+		-- 		vim.api.nvim_exec_autocmds("User", { pattern = "LazyRender", modeline = false })
+		-- 		vim.api.nvim_exec_autocmds("User", { pattern = "LazyReload", modeline = false })
+		-- 	end)
+		-- end
 
 		--------------------| core patch |--------------------
 

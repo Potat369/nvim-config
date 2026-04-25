@@ -6,6 +6,7 @@ return {
 			servers = {
 				rust_analyzer = {},
 				tailwindcss = {},
+				gopls = {},
 				nil_ls = {},
 				phpactor = {},
 				astro = {},
