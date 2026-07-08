@@ -4,7 +4,6 @@ return {
 	opts = function()
 		local builtin = require("statuscol.builtin")
 
-		vim.o.number = true
 		vim.o.relativenumber = true
 		vim.o.numberwidth = 2
 

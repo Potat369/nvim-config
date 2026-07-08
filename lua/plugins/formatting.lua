@@ -12,6 +12,7 @@ return {
 			typescriptreact = { "prettier" },
 			typescript = { "prettier" },
 			html = { "prettier" },
+			odin = { "odinfmt" },
 		},
 		format_on_save = {
 			timeout_ms = 1000,

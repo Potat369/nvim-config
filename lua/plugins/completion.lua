@@ -3,6 +3,13 @@ return {
 	version = "1.*",
 	event = { "InsertEnter", "CmdLineEnter" },
 	opts = {
+		completion = {
+			accept = {
+				auto_brackets = {
+					enabled = false,
+				},
+			},
+		},
 		signature = { enabled = true },
 		snippets = { preset = "luasnip" },
 		sources = {

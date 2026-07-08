@@ -5,7 +5,6 @@ return {
 		opts = {
 			servers = {
 				rust_analyzer = {},
-				tailwindcss = {},
 				gopls = {},
 				nil_ls = {},
 				phpactor = {},
@@ -37,6 +36,7 @@ return {
 						textDocument = {
 							completion = {
 								completionItem = {
+									snippetSupport = false,
 									documentationFormat = { "plaintext" },
 								},
 							},
